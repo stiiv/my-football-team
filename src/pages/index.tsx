@@ -1,23 +1,19 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import Player from 'components/Player';
+import styles from '../styles/Home.module.css';
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>My football team</title>
+        <title>{process.env.APP_TITLE}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to My Football Team!
-        </h1>
+        <h1 className={styles.title}>{process.env.APP_TITLE}</h1>
 
-        <p className={styles.description}>
-          Start by{' '}
-          <code className={styles.code}>setting up your team!</code>
-        </p>
+        <Player name="Marko" onNameChange={(name) => console.log(name)} />
       </main>
 
       <footer className={styles.footer}>
@@ -31,5 +27,5 @@ export default function Home() {
         </a>
       </footer>
     </div>
-  )
+  );
 }
