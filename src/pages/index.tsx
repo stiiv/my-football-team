@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import Player from 'components/Player';
 import styles from '../styles/Home.module.css';
+import PlayersList from 'components/PlayersList';
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
       <main className={styles.main}>
         <h1 className={styles.title}>{process.env.APP_TITLE}</h1>
 
-        <Player name="Marko" onNameChange={(name) => console.log(name)} />
+        <PlayersList />
       </main>
 
       <footer className={styles.footer}>

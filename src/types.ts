@@ -1,5 +1,9 @@
 export type PlayerProps = {
-  name: string;
-  onNameChange: (name: string) => void;
-  editable?: boolean;
+  id: number | string;
+  editMode?: boolean;
+  onEdit?: (id: number | string, name: string) => void;
+  onSave?: (id: number | string, name: string) => void;
+  onDelete?: (id: number | string, name: string) => void;
 };
+
+export type PlayersListProps = {};
