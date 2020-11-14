@@ -1,4 +1,6 @@
 import React from 'react';
+import { Button } from '@material-ui/core';
+import Icon from '@material-ui/core/Icon';
 import { PlayersListProps } from 'types';
 import Player from 'components/Player';
 import { v4 as uuidv4 } from 'uuid';
@@ -15,7 +17,10 @@ function PlayersList({}: PlayersListProps): JSX.Element {
   const listOFKeys = Object.keys(list);
   return (
     <>
-      <button
+      <Button
+        color="primary"
+        variant="contained"
+        startIcon={<Icon fontSize="large">add_circle</Icon>}
         onClick={() => {
           const item: PlayerItem = {
             id: uuidv4(),
@@ -25,7 +30,7 @@ function PlayersList({}: PlayersListProps): JSX.Element {
         }}
       >
         Dodaj
-      </button>
+      </Button>
       {listOFKeys.length > 0 ? (
         <ol>
           {listOFKeys.map((id: string) => (
